@@ -6,7 +6,7 @@ Atividade prática de programação que consiste em criar uma api NodeJS.
   Para resolução desse problema, decidi usar banco de dados mySql do que uma simples resposta estatica (como opção no desafio).
   Abaixo a ilustração do relacionamento (ER) do banco de dados
 
-![modelo banco de dados]('doc/src/modelagem_banco.PNG')
+![modelo banco de dados](https://github.com/rudda/api-neeemu/blob/master/doc/src/modelagem_banco.PNG)
 
 #API nodeJS
 
