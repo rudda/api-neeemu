@@ -9,39 +9,6 @@ database : 'api-neemu'
 });
 
          
-                /**
-                 * 
-          .on('end', function(){
-
-                var q = "SELECT * from produto where produto_id in (select id_produto_recomendacao from recomendacao_produto where recomendacao_produto.id_produto_referencia = "+produto.produto_id+")";
-
-                console.log(q);
-
-                connection.query(q, function (error, results, fields) {
-
-                  produto['recomendacoes'] = results;
-                  //console.log(produto);
-
-                 
-
-                }) 
-                .on('end', function(){
-
-                    //console.log("--", "end");
-                    res(produto);
-                    
-                });
-
-
-
-          });
-
-
-
-
-        });
-                 */
-
 connection.connect();
 
 
