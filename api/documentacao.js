@@ -1,6 +1,6 @@
 
 /**
- * @api {get} produtos getProdutos
+ * @api {get} produtos buscar todos os produtos
  * @apiVersion 1.0.0
  * @apiGroup Produto
  * @apiDescription
@@ -148,4 +148,53 @@
         "recomendacao": []
     }
 ]
+ */
+
+
+
+
+
+
+
+
+
+
+
+ 
+/**
+ * @api {get} produtos/:id buscar produto
+ * @apiVersion 1.0.0
+ * @apiGroup Produto
+ * @apiDescription
+ * Retorna um produto em especifico, conforme solicitado
+ * @apiSuccessExample {json} Success-Response:
+ * {
+    "produto_id": 1,
+    "produto_nome": "Notebook Ideapad 320 Intel Core i5-8250U 8GB (GeForce MX150 com 2GB) 1TB HD 15,6'' W10 Preto - Lenovo",
+    "produto_preco": 259999,
+    "produto_preco_antigo": 269999,
+    "produto_imagem": "https://images-submarino.b2w.io/produtos/01/00/item/133252/8/133252826SZ.jpg",
+    "produto_url_detalhe": "https://www.submarino.com.br/produto/133252826/notebook-lenovo-ideapad-320-intel-core-i5-8250u-8gb-geforce-mx150-com-2gb-1tb-tela-15-6-windows-10-preto?pfm_carac=notebook&pfm_index=7&pfm_page=search&pfm_pos=grid&pfm_type=search_page%20&voltagem=BIVOLT",
+    "produto_condicao_pagamento": "<b> R$ 2.469,99 </b> em 1x no cartão de credito (5% de desconto)\r\nOu <b> R$ 2.599,99 </b> em até 20x de R$ 129,99 s/ juros",
+    "recomendacao": [
+        {
+            "produto_id": 2,
+            "produto_nome": "Foto 6 - Notebook Acer A515-51G-72DB Intel Core I7 8GB (GeForce 940MX com 2GB) 1TB Tela LED 15.6\" Windows 10 - Cinza Escuro\r\nFoto 1 - Notebook Acer A515-51G-72DB Intel Core I7 8GB (GeForce 940MX com 2GB) 1TB Tela LED 15.6\" Windows 10 - Cinza Escuro\r\nFoto ",
+            "produto_preco": 274999,
+            "produto_preco_antigo": 284999,
+            "produto_imagem": "https://images-submarino.b2w.io/produtos/01/00/item/132620/8/132620885SZ.jpg",
+            "produto_url_detalhe": "https://www.submarino.com.br/produto/132620885/notebook-acer-a515-51g-72db-intel-core-i7-8gb-geforce-940mx-com-2gb-1tb-tela-led-15-6-windows-10-cinza-escuro?DCSext.recom=RR_item_page.rr1-ClickEV&nm_origem=rec_item_page.rr1-ClickEV&nm_ranking_rec=1",
+            "produto_condicao_pagamento": "R$ 2.612,49 em 1x no cartão de credito(5% de desconto)\r\nOu R$ 2.749,99 em até 20x de R$ 137,49 s/ juros"
+        },
+        {
+            "produto_id": 3,
+            "produto_nome": "Notebook Lenovo Ideapad 320 Intel® Core i7-7500u 8GB (GeForce 940MX com 2GB) 1TB Tela FULL HD 15,6\" Windows 10 - Prata",
+            "produto_preco": 299999,
+            "produto_preco_antigo": 310000,
+            "produto_imagem": "https://images-submarino.b2w.io/produtos/01/00/item/132384/8/132384827SZ.jpg",
+            "produto_url_detalhe": "https://www.submarino.com.br/produto/132384827/notebook-lenovo-ideapad-320-intel-core-i7-7500u-8gb-geforce-940mx-com-2gb-1tb-tela-full-hd-15-6-windows-10-prata?DCSext.recom=RR_item_page.rr1-ClickEV&nm_origem=rec_item_page.rr1-ClickEV&nm_ranking_rec=2",
+            "produto_condicao_pagamento": "R$ 2.849,99 em 1x no cartão Credito(5% de desconto)\r\nOu R$ 2.999,99 em até 20x de R$ 149,99 s/ juros"
+        }
+    ]
+}
  */

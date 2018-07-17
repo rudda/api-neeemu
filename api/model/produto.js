@@ -155,26 +155,32 @@ var produto = {
 
         console.log("add-recomendacao");
 
-        if(produto_id != produto_recomendacao){
+        return new Promise((res, rej)=>{
 
-            connection.query('insert into recomendacao_produto set ?',{id_produto_recomendacao : produto_id, id_produto_referencia : produto_recomendacao}, function (error, results, fields) {
+            if(produto_id != produto_recomendacao){
 
-               if(error) return false;
+                connection.query('insert into recomendacao_produto set ?',{id_produto_recomendacao : produto_id, id_produto_referencia : produto_recomendacao}, function (error, results, fields) {
+    
+                   if(error) res(false);
+    
+                }).on('end', function(){
+                    
+                  res(true);
+    
+                });
+    
+    
+    
+            }else{
+    
+                console.log("erro", "ids iguais");
+                res( false );
+               
+            }
+           
 
-            }).on('end', function(){
-                
-              return true;
 
-            });
-
-
-
-        }else{
-
-            return false;
-            console.log("erro", "ids iguais");
-
-        }
+        });
         
 
     }

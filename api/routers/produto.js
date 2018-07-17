@@ -33,6 +33,24 @@ var appProduto = function (app) {
       }
        
     });
+
+
+  
+    app.post("/produtos", function(req, res) {
+
+
+
+    });
+
+    
+    app.post("/recomendar/produtos/:id_produto_referencia/:id_produto_recomendacao", function(req, res) {
+
+            
+
+    });
+
+
+
   }
   
   module.exports = appProduto;
