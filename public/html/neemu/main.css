@@ -111,3 +111,33 @@ html {
     font-size: 12px;
     white-space: normal;
 }
+
+#painel-search{
+
+    background-color: #D32F2F;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 50px;
+    text-align: center;
+    display: absolute;
+    padding-left: 5%;
+    padding-top: 70px; 
+
+}
+
+#input-search{
+
+    width: 60%;
+    height: 35px;
+    padding-left: 20px;
+    font-size: 16px;
+    white-space: normal;
+    font-family: 'Roboto Condensed', sans-serif;
+   
+}
+#bt-search{
+
+    margin-left: 5px;
+    padding: 10px;
+
+}
