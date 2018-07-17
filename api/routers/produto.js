@@ -5,6 +5,7 @@ var appProduto = function (app) {
     
   app.get('/produtos', function(req, res){
 
+
     produto_model.getProdutos().then(resposta=>{
           
       res.status(200).send(resposta);

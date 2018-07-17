@@ -9,6 +9,7 @@
   "dependencies": {
     "apidoc": "^0.17.6",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "forever-monitor": "^1.7.1",
     "mysql": "^2.15.0"

@@ -2,13 +2,14 @@
     var routers = require('./routers/routers');
     var produto = require('./routers/produto');
     var bodyParser = require("body-parser");
+    var cors = require('cors');
    
 
     app = express();
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
-
-
+    app.use(cors());
+    
     routers(app);    
     produto(app);
       
