@@ -102,20 +102,25 @@ var produto = {
 
         console.log("add-produto");
 
-        connection.query('insert into produto set ?', produto, function(erro, result, fields){
+        return new Promise( (res, rej)=>{
 
-            if(erro){
+            var query_add_produto = connection.query('insert into produto set ?', produto, function(erro, result, fields){
 
-                return false;
+                if(erro){
+    
+                    res(false);
+    
+                }
+    
+            });
+    
+            query_add_produto.on('end', function(){
 
-            }
+                res(true);
 
+            });
 
-        }).on('end', function(){
-
-            return true;
         });
-
         
     },
 
