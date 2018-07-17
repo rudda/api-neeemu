@@ -8,6 +8,40 @@ password : '',
 database : 'api-neemu'
 });
 
+         
+                /**
+                 * 
+          .on('end', function(){
+
+                var q = "SELECT * from produto where produto_id in (select id_produto_recomendacao from recomendacao_produto where recomendacao_produto.id_produto_referencia = "+produto.produto_id+")";
+
+                console.log(q);
+
+                connection.query(q, function (error, results, fields) {
+
+                  produto['recomendacoes'] = results;
+                  //console.log(produto);
+
+                 
+
+                }) 
+                .on('end', function(){
+
+                    //console.log("--", "end");
+                    res(produto);
+                    
+                });
+
+
+
+          });
+
+
+
+
+        });
+                 */
+
 connection.connect();
 
 
@@ -17,8 +51,9 @@ var produto = {
        console.log("get-produto");
 
        var produtos_;
-        connection.query('SELECT * from produto limit 0, '+limit, function (error, results, fields) {
-            if (error) return false;
+        connection.query('SELECT * from produto' , function (error, results, fields) {
+            
+            console.log("get-produto", results);
             
 
           }).on('result', function(row){
@@ -59,47 +94,62 @@ var produto = {
     
     getProdutosById: function (id){
 
-        console.log("get-produto");
+        return new Promise((res, rej)=>{
 
-        var produto;
+            var produto;
 
-        connection.query('SELECT * from produto where produto_id= '+id, function (error, results, fields) {
-                
-            if (error) {
-                
-                console.log("error");
-            
-                return false;
-            
-            }
-          
-               console.log("get-produtos", results);
-               produto = results;
+            var query_produto = connection.query('SELECT * from produto where produto_id= '+id);
+                     
+            query_produto.on('result', function(row){
 
-          }).on('end', function(){
+                produto = row;
+                produto['recomendacao'] = [];
+                var q = "SELECT * from produto where produto_id in (select id_produto_recomendacao from recomendacao_produto where recomendacao_produto.id_produto_referencia = "+produto.produto_id+")";
 
-            connection.query('SELECT * from produto where produto_id in (select id_produto_recomendacao from recomendacao_produto where recomendacao_produto.id_produto_referencia = produto.produto_id) and produto_id = '+id, function (error, results_, fields) {
+                var query_recomendacoes = connection.query(q);
 
-                produto['recomendacoes'] = results_;
-               
-                console.log("query", produto);
+                query_recomendacoes.on('result', function(row){
 
-                return produto;
+                    produto.recomendacao.push(row);
+
+                });
+
+                query_recomendacoes.on('end', function(){
+
+                    console.log('fim', produto);
+                    res(produto);
+
+                });
+        
 
             });
 
-
-
-          });
-
+              
+          
+        });
 
 
     },
 
     addProduto : function ( produto ){
-        
+
         console.log("add-produto");
 
+        connection.query('insert into produto set ?', produto, function(erro, result, fields){
+
+            if(erro){
+
+                return false;
+
+            }
+
+
+        }).on('end', function(){
+
+            return true;
+        });
+
+        
     },
 
     addRecomendacaoProduto : function(produto_id, produto_recomendacao){
