@@ -1,0 +1,33 @@
+{
+  "name": "api-neeemu",
+  "version": "1.0.0",
+  "description": "desafio api para rudda beltrao",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "apidoc": "^0.17.6",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "forever-monitor": "^1.7.1",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rudda/api-neeemu.git"
+  },
+  "keywords": [
+    "neemu"
+  ],
+  "author": "rudda beltrao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rudda/api-neeemu/issues"
+  },
+  "homepage": "https://github.com/rudda/api-neeemu#readme"
+}
