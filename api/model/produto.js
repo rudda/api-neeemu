@@ -17,46 +17,73 @@ var produto = {
     getProdutos: function(limit=25){
        console.log("get-produto");
 
-       var produtos_;
-        connection.query('SELECT * from produto' , function (error, results, fields) {
-            
-            console.log("get-produto", results);
-            
+       var produtos_ = []; //array de produtos
 
-          }).on('result', function(row){
-            
-            console.log("stream", row);
+       return new Promise( (res, rej)=>{
+        
+       var query_produtos =   connection.query('SELECT *, (SELECT COUNT(*) from produto) as contador  from produto');
+       var count = 0;
+       var index_produto=0; 
+      
+       query_produtos.on('result', function(row, index){
+      
             var aux = row;
-            var recomendacao;
+            index_produto =  row.contador;
+            //um produto
+            aux['recomendacao'] = [];
 
-            connection.query('SELECT * from produto where produto_id in (select id_produto_recomendacao from recomendacao_produto where recomendacao_produto.id_produto_referencia = produto.produto_id) and produto_id = '+row.produto_id, function (error, results_, fields) {
+            console.log("produto_id", row.produto_id, index);
+            var recomendacao; //recomendacao de um produto
 
-                if(error) return false;
-                
-                recomendacao = results_;
+            var q = "SELECT * from produto where produto_id in (select id_produto_recomendacao from recomendacao_produto where recomendacao_produto.id_produto_referencia = "+row.produto_id+")";
 
-            }).on('end', function(){
+            var query_ = connection.query(q);
+            
+
+            //push em cada recomendacao
+            query_.on('result', function(row, index){
               
-                aux['recomendacoes'] = recomendacao;
+                aux['recomendacao'].push(row);
+                console.log("recomendacao- result ", aux.produto_id, index);
+                              
+            });
+
+            //quando terminar a query de recomendacao de cada produto
+            query_.on('end', function(){
+                console.log("end_recomendacao ", count,  index_produto);
                 produtos_.push(aux);
 
-                console.log("push", produtos_);
+                count++;
+
+                 if(count == (index_produto ) ){
+
+                   console.log("enviar");
+                   res(produtos_);
+
+
+                 } else{
+
+
+                    console.log("nao enviar");
+
+
+                 }  
 
             });
                    
 
-        }).on('end', function(){
-
-            console.log("end", produtos_);
-
-            return produtos_;
-
         });
             
-            
+ 
+        query_produtos.on('end', function(){
+
+            console.log("end produtos query");
+    
+           });
 
 
-
+       });
+       
     },
     
     getProdutosById: function (id){
