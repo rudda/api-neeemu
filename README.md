@@ -11,7 +11,8 @@ Para resolução desse problema, decidi usar banco de dados mySql do que uma sim
 
 # API nodeJS
 
-* start REST
+## start REST
+    
     node api/index.js
 
 * A api possue as seguintes funcionalidades
