@@ -4,6 +4,13 @@ Atividade prática de programação que consiste em criar uma api NodeJS.
 
 ![modelo banco de dados](https://github.com/rudda/api-neeemu/blob/master/doc/src/screen.PNG)
 
+# O projeto Web
+
+A segunda camado do projeto, consiste em um projeto web  que tem a funcionalidade de consumir a api REST NodeJS na rota (GET) /produtos:id que mostra todas as informações de um produto e suas recomendações.
+
+Para executar você deve rodar o index do seguinte diretorio
+
+     public/html/neemu/
 
 # banco de dados
 
@@ -50,9 +57,6 @@ Para resolução desse problema, decidi usar banco de dados mySql do que uma sim
 
 ![docs](https://github.com/rudda/api-neeemu/blob/master/doc/src/documentacao.PNG)
 
-# O projeto Web
-
-A segunda camado do projeto, consiste em um projeto web  que tem a funcionalidade de consumir a api REST NodeJS na rota (GET) /produtos:id que mostra todas as informações de um produto e suas recomendações.
 
 
 
