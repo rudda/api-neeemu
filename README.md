@@ -17,10 +17,11 @@ Para resolução desse problema, decidi usar banco de dados mySql do que uma sim
     * usuario root
     * sem senha
     * nome banco de dados api-neemu
-    * importar o arquivo ![modelo banco de dados](https://github.com/rudda/api-neeemu/blob/master/doc/src/api-neemu.sql)
+    * importar o arquivo [api-neemu.sql](https://github.com/rudda/api-neeemu/blob/master/doc/src/api-neemu.sql)
 
 
-  ps: você pode configurar o arquivo nesse seguinte trecho
+  ps: você pode configurar o arquivo [api/model/produto.js](api/model/produto.js)
+ nesse seguinte trecho
 
   ```javascript
     
@@ -44,8 +45,10 @@ Para resolução desse problema, decidi usar banco de dados mySql do que uma sim
   * listar todos os produtos 
   * listar um produto por id
 
- *  [documentação](http://localhost/api-neemu/api/api-doc/)
+* API possue uma documentacao usando o a dependencia [apidoc](http://apidocjs.com/)
+     [/api-neeemu/api/api-doc/](http://localhost/api-neeemu/api/api-doc/)
 
+![docs](https://github.com/rudda/api-neeemu/blob/master/doc/src/documentacao.PNG)
 
 # O projeto Web
 
