@@ -14,9 +14,11 @@ Para resolução desse problema, decidi usar banco de dados mySql do que uma sim
 
     para que o banco de dados funcione corretamente é nessario os seguintes passo:
 * banco de dados mySQl
-  ** usuario root
-  ** sem senha
-  ** nome banco de dados api-neemu
+    * usuario root
+    * sem senha
+    * nome banco de dados api-neemu
+    * importar o arquivo ![modelo banco de dados](https://github.com/rudda/api-neeemu/blob/master/doc/src/api-neemu.sql)
+
 
   ps: você pode configurar o arquivo nesse seguinte trecho
 
