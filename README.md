@@ -20,7 +20,7 @@ Para resolução desse problema, decidi usar banco de dados mySql do que uma sim
 
   ps: você pode configurar o arquivo nesse seguinte trecho
 
-  ```html
+  ```javascript
     
     var connection = mysql.createConnection({
         host     : 'localhost',
