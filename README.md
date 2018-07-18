@@ -3,6 +3,7 @@
 Atividade prática de programação que consiste em criar uma api NodeJS. 
 
 # banco de dados
+
 Para resolução desse problema, decidi usar banco de dados mySql do que uma simples resposta estatica (como opção no desafio).
  Abaixo a ilustração do relacionamento (ER) do banco de dados
 
@@ -10,14 +11,14 @@ Para resolução desse problema, decidi usar banco de dados mySql do que uma sim
 
 # API nodeJS
 
-A api possue as seguintes funcionalidades
+* start REST
+    node api/index.js
 
-* CRUD (Criar, Recuperar, Atualizar e Deletar) produtos no banco de dados.
-* Recuperar as recomendações de cada produto.
+* A api possue as seguintes funcionalidades
+  * listar todos os produtos 
+  * listar um produto por id
 
-Para melhor guia da api, decidi criar um documentação, usando a dependencia apidoc. Dessa forma é possivel ter um guia de todos os metodos, parametros e demais requisitos em cada requisição a ser feita.
- 
- *  [documentação](http://localhost/api-neemu/doc)
+ *  [documentação](http://localhost/api-neemu/api/api-doc/)
 
 
 # O projeto Web

@@ -107,6 +107,9 @@ html {
     font-weight: 700;
     font-size: 12px;
     white-space: normal;
+    min-height: 20px;
+    max-height: 20px;
+    
 
 }
 .pure-slider-item-price-02 {
@@ -114,6 +117,8 @@ html {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700;
     white-space: normal;
+    min-height: 20px;
+    max-height: 20px;
 }
 .pure-slider-item-price-03 {
     color: rgb(50, 50, 50);
@@ -121,6 +126,8 @@ html {
     font-weight: 700;
     font-size: 12px;
     white-space: normal;
+    min-height: 20px;
+    max-height: 20px;
 }
 
 #painel-search{

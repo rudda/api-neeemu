@@ -29,7 +29,7 @@ function callback(res) {
 
     var div_produto_principal = '<div class="pure-slider-item">'+
     '<img class="pure-slider-item-image" src='+prod.produto_imagem+'>'+
-    '<p class="pure-slider-item-description">'+(prod.produto_nome.substring(0, 100))+'</p>'+
+    '<p class="pure-slider-item-description">'+( prod.produto_nome.substring(0, 50) )+'</p>'+
     '<p class="pure-slider-item-price-01">De:'+ ((prod.produto_preco_antigo)/100) +'</p>'+
     '<h3 class="pure-slider-item-price-02">Por:'+ ((prod.produto_preco)/100 )+'</h3>'+
     '<p class="pure-slider-item-price-03">'+prod.produto_condicao_pagamento+'</p>'+
