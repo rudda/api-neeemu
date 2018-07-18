@@ -20,7 +20,7 @@ Para resolução desse problema, decidi usar banco de dados mySql do que uma sim
 
   ps: você pode configurar o arquivo nesse seguinte trecho
 
-  ´´´js
+  ```html
     
     var connection = mysql.createConnection({
         host     : 'localhost',
@@ -29,7 +29,7 @@ Para resolução desse problema, decidi usar banco de dados mySql do que uma sim
         database : 'api-neemu'
     });
 
-  ´´´
+  ```
 
 
 # API nodeJS
